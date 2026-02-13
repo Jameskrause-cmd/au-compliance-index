@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aucomplianceindex.github.io/sitemap.xml
