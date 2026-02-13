@@ -4,153 +4,452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>315 | Excavator Specs & Compliance | AU Compliance Index</title>
-    <meta name="description" content="Specifications, compliance data and performance charts for the Caterpillar 315 Excavator. Australian standard reference: AS 1418.1.">
-    <link rel="canonical" href="https://aucomplianceindex.github.io/excavator/caterpillar_315.html">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Caterpillar 315", "category": "Excavator", "manufacturer": {"@type": "Organization", "name": "Caterpillar"}, "description": "Excavator by Caterpillar. Model: 315."}</script>
+    <title>Caterpillar 315 Specs | Excavator | AU Compliance Index</title>
+    <meta name="description" content="Technical specifications for the Caterpillar 315 Excavator. Operating weight, capacity, engine data and Australian compliance reference (AS 1418.1).">
+    <link rel="canonical" href="https://jameskrause-cmd.github.io/au-compliance-index/excavator/caterpillar_315.html">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Caterpillar 315", "category": "Excavator", "manufacturer": {"@type": "Organization", "name": "Caterpillar"}, "description": "Excavator specifications for the Caterpillar 315. Australian compliance reference: AS 1418.1."}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #020617;
-            --accent: #f59e0b;
-            --text: #334155;
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --border: #e2e8f0;
-            --light-bg: #f1f5f9;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-400: #94a3b8;
+            --slate-200: #e2e8f0;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --amber-500: #f59e0b;
+            --amber-400: #fbbf24;
+            --amber-600: #d97706;
+            --white: #ffffff;
+            --red-50: #fef2f2;
+            --red-700: #b91c1c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, system-ui, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            max-width: 800px;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            color: var(--slate-700);
+            background: var(--slate-50);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--slate-200);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: var(--bg);
-        }
-
-        .header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent);
+            justify-content: space-between;
+            height: 56px;
         }
 
-        .header strong {
-            font-size: 1rem;
-            color: var(--primary);
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--slate-900);
+        }
+
+        .nav-brand svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .nav-brand span {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--slate-600);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--slate-900);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 24px 64px;
         }
 
         .breadcrumb {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 16px;
+            font-size: 0.8rem;
+            color: var(--slate-500);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .breadcrumb a {
-            color: #2563eb;
+            color: var(--slate-600);
             text-decoration: none;
+            font-weight: 500;
         }
 
-        .card {
-            background: var(--card);
-            padding: 24px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid var(--accent);
+        .breadcrumb a:hover {
+            color: var(--slate-900);
         }
 
-        h1 {
-            color: var(--primary);
-            margin-top: 0;
-            font-size: 1.5rem;
+        .breadcrumb .sep {
+            color: var(--slate-400);
         }
 
-        .badge {
-            background: #fee2e2;
-            color: #991b1b;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: bold;
+        .page-header {
+            margin-bottom: 32px;
+        }
+
+        .page-header .mfr {
             font-size: 0.75rem;
-            display: inline-block;
-            margin-bottom: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--amber-600);
+            margin-bottom: 6px;
+        }
+
+        .page-header h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .page-header .cat-label {
+            font-size: 0.85rem;
+            color: var(--slate-500);
+        }
+
+        .compliance-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--red-50);
+            color: var(--red-700);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            border: 1px solid #fecaca;
+            margin-bottom: 24px;
+        }
+
+        .compliance-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .spec-section {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .spec-section-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--slate-200);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        th {
-            background: var(--light-bg);
-            text-align: left;
-            padding: 12px;
-            border-bottom: 2px solid var(--border);
         }
 
         td {
-            padding: 12px;
-            border-bottom: 1px solid var(--light-bg);
+            padding: 12px 20px;
+            font-size: 0.875rem;
+            border-bottom: 1px solid var(--slate-100);
         }
 
-        .disclaimer {
-            font-size: 0.7rem;
-            color: #94a3b8;
-            margin-top: 30px;
-            border-top: 1px solid var(--border);
-            padding-top: 10px;
+        tr:last-child td {
+            border-bottom: none;
         }
 
-        .cta {
-            background: #eff6ff;
-            border: 1px solid #3b82f6;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
+        td:first-child {
+            color: var(--slate-500);
+            font-weight: 500;
+            width: 45%;
         }
 
-        .cta a {
-            color: #2563eb;
-            font-weight: bold;
+        td:last-child {
+            color: var(--slate-900);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: var(--slate-50);
+        }
+
+        .sidebar {}
+
+        .sidebar-card {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .sidebar-card h4 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--slate-900);
+            margin-bottom: 12px;
+        }
+
+        .sidebar-card p {
+            font-size: 0.8rem;
+            color: var(--slate-500);
+            line-height: 1.6;
+        }
+
+        .sidebar-card a.link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--amber-600);
+            font-size: 0.8rem;
+            font-weight: 600;
             text-decoration: none;
+            margin-top: 8px;
+        }
+
+        .sidebar-card a.link:hover {
+            text-decoration: underline;
+        }
+
+        .quick-specs {
+            list-style: none;
+        }
+
+        .quick-specs li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--slate-100);
+            font-size: 0.8rem;
+        }
+
+        .quick-specs li:last-child {
+            border-bottom: none;
+        }
+
+        .quick-specs .qs-label {
+            color: var(--slate-500);
+        }
+
+        .quick-specs .qs-val {
+            color: var(--slate-900);
+            font-weight: 600;
+        }
+
+        .source-notice {
+            background: var(--slate-100);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 32px;
+            font-size: 0.75rem;
+            color: var(--slate-500);
+            line-height: 1.7;
+        }
+
+        .source-notice a {
+            color: var(--slate-700);
+            font-weight: 600;
+        }
+
+        .source-notice strong {
+            color: var(--slate-600);
+        }
+
+        .footer {
+            background: var(--slate-900);
+            color: var(--slate-400);
+            padding: 32px 24px;
+            margin-top: 48px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .footer a {
+            color: var(--slate-400);
+            text-decoration: none;
+            margin-left: 16px;
+        }
+
+        .footer a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 640px) {
+            .page-header h1 {
+                font-size: 1.35rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="header"><strong>AU Compliance Index</strong></div>
-    <div class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">Excavator</a> &rsaquo;
-        315</div>
-    <div class="card">
-        <span class="badge">AS 1418.1</span>
-        <h1>Caterpillar 315 <small>(Excavator)</small></h1>
-        <h3>Specifications</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Specification</th>
-                    <th>Value</th>
-                </tr>
-            </thead>
-            <tbody><tr><td>Operating Weight</td><td>17000 kg kg</td></tr>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                </svg>
+                <span>AU Compliance Index</span>
+            </a>
+            <div class="nav-links">
+                <a href="../about.html">About</a>
+                <a href="../privacy.html">Privacy</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a><span class="sep">/</span>
+            <a href="index.html">Excavator</a><span class="sep">/</span>
+            <span>315</span>
+        </div>
+
+        <div class="page-header">
+            <div class="mfr">Caterpillar</div>
+            <h1>315</h1>
+            <div class="cat-label">Excavator â€” Technical Specifications</div>
+        </div>
+
+        <div class="compliance-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            Ref: AS 1418.1
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content">
+                <div class="spec-section">
+                    <div class="spec-section-header">Technical Specifications</div>
+                    <table>
+                        <tbody><tr><td>Operating Weight</td><td>17000 kg</td></tr>
 <tr><td>Max Dig Depth</td><td>5.94m m</td></tr>
 <tr><td>Engine</td><td>Cat ACERT</td></tr>
 </tbody>
-        </table>
-        
-        <div class="cta"><strong>Need Specialised Insurance?</strong><br>
-            <p style="font-size:0.9rem;">Get a quote for commercial Excavator coverage in NSW.</p><a href="#">Check
-                Rates &rarr;</a>
+                    </table>
+                </div>
+                
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-card">
+                    <h4>Quick Reference</h4>
+                    <ul class="quick-specs"><li><span class="qs-label">Operating Weight</span><span class="qs-val">17000 kg</span></li>
+<li><span class="qs-label">Max Dig Depth</span><span class="qs-val">5.94m m</span></li>
+</ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>Official Documentation</h4>
+                    <p>For certified load charts and complete technical data, refer directly to the manufacturer.</p>
+                    <a href="https://www.cat.com" class="link" target="_blank" rel="noopener">View manufacturer site
+                        &rarr;</a>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>Need a Quote?</h4>
+                    <p>Looking to hire or purchase this equipment? Get quotes from verified Australian dealers.</p>
+                    <a href="../contact.html" class="link">Request information &rarr;</a>
+                </div>
+            </div>
         </div>
-        <div class="disclaimer"><strong>SOURCE:</strong> Data indexed from manufacturer technical sheets.
-            <strong>NOTICE:</strong> This is a data index for estimation purposes only. Always consult the <a
-                href="https://www.cat.com">Official Manufacturer Data</a> before making operational decisions.</div>
+
+        <div class="source-notice">
+            <strong>Data Source:</strong> Specifications indexed from official manufacturer technical datasheets. This
+            data is provided for reference and estimation purposes only. Always verify with the <a href="https://www.cat.com"
+                target="_blank" rel="noopener">official manufacturer documentation</a> before making operational or
+            procurement decisions. AU Compliance Index is an independent data index and is not affiliated with
+            Caterpillar.
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span>&copy; 2026 AU Compliance Index</span>
+            <div>
+                <a href="../about.html">About</a>
+                <a href="../privacy.html">Privacy</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

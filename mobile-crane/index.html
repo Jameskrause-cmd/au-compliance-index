@@ -4,156 +4,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Crane | AU Compliance Index</title>
+    <title>Mobile Crane Specifications | AU Compliance Index</title>
     <meta name="description"
-        content="Browse 37 Mobile Crane models with Australian compliance data, specifications and performance charts.">
+        content="Browse 37 Mobile Crane models with verified Australian compliance data, specifications and performance charts. Free equipment reference for site managers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #020617;
-            --accent: #f59e0b;
-            --text: #334155;
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --border: #e2e8f0;
-            --light-bg: #f1f5f9;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-400: #94a3b8;
+            --slate-200: #e2e8f0;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --amber-500: #f59e0b;
+            --amber-600: #d97706;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, system-ui, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            max-width: 900px;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            color: var(--slate-700);
+            background: var(--slate-50);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--slate-200);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: var(--bg);
-        }
-
-        .header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent);
+            justify-content: space-between;
+            height: 56px;
         }
 
-        .header strong {
-            font-size: 1rem;
-            color: var(--primary);
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--slate-900);
+        }
+
+        .nav-brand svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .nav-brand span {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--slate-600);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--slate-900);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 32px 24px 64px;
         }
 
         .breadcrumb {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 16px;
+            font-size: 0.8rem;
+            color: var(--slate-500);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .breadcrumb a {
-            color: #2563eb;
+            color: var(--slate-600);
             text-decoration: none;
+            font-weight: 500;
         }
 
-        h1 {
-            color: var(--primary);
+        .breadcrumb a:hover {
+            color: var(--slate-900);
+        }
+
+        .breadcrumb .sep {
+            color: var(--slate-400);
+        }
+
+        .page-header {
+            margin-bottom: 28px;
+        }
+
+        .page-header h1 {
             font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
         }
 
-        .count {
-            color: #64748b;
-            font-size: 0.9rem;
+        .page-header .count {
+            font-size: 0.85rem;
+            color: var(--slate-500);
+        }
+
+        .table-wrap {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.9rem;
-            background: var(--card);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         th {
-            background: var(--primary);
-            color: white;
+            background: var(--slate-900);
+            color: var(--white);
             text-align: left;
-            padding: 12px;
+            padding: 14px 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
         }
 
         td {
-            padding: 12px;
-            border-bottom: 1px solid var(--border);
+            padding: 14px 20px;
+            font-size: 0.875rem;
+            border-bottom: 1px solid var(--slate-100);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: var(--slate-50);
         }
 
         td a {
-            color: #2563eb;
+            color: var(--slate-900);
             text-decoration: none;
             font-weight: 600;
         }
 
         td a:hover {
-            text-decoration: underline;
+            color: var(--amber-600);
         }
 
-        tr:hover {
-            background: var(--light-bg);
+        td .mfr {
+            color: var(--slate-500);
+        }
+
+        .footer {
+            background: var(--slate-900);
+            color: var(--slate-400);
+            padding: 32px 24px;
+            margin-top: 48px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .footer a {
+            color: var(--slate-400);
+            text-decoration: none;
+            margin-left: 16px;
+        }
+
+        .footer a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 640px) {
+            .page-header h1 {
+                font-size: 1.25rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            td,
+            th {
+                padding: 10px 12px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="header"><strong>AU Compliance Index</strong></div>
-    <div class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; Mobile Crane</div>
-    <h1>Mobile Crane</h1>
-    <p class="count">37 models indexed</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>Manufacturer</th>
-                <th>Key Spec</th>
-            </tr>
-        </thead>
-        <tbody><tr><td><a href="franna_at15.html">AT15</a></td><td>Franna</td><td>15</td></tr>
-<tr><td><a href="franna_at20.html">AT20</a></td><td>Franna</td><td>20</td></tr>
-<tr><td><a href="franna_at22-2.html">AT22-2</a></td><td>Franna</td><td>22</td></tr>
-<tr><td><a href="franna_mac25.html">MAC25</a></td><td>Franna</td><td>25</td></tr>
-<tr><td><a href="franna_at40.html">AT40</a></td><td>Franna</td><td>40</td></tr>
-<tr><td><a href="grove_gmk3050-3.html">GMK3050-3</a></td><td>Grove</td><td>50</td></tr>
-<tr><td><a href="grove_gmk3060l-1.html">GMK3060L-1</a></td><td>Grove</td><td>60</td></tr>
-<tr><td><a href="grove_gmk4080-1.html">GMK4080-1</a></td><td>Grove</td><td>80</td></tr>
-<tr><td><a href="grove_gmk4090.html">GMK4090</a></td><td>Grove</td><td>90</td></tr>
-<tr><td><a href="grove_gmk4100l-1.html">GMK4100L-1</a></td><td>Grove</td><td>100</td></tr>
-<tr><td><a href="grove_gmk5250xl-1.html">GMK5250XL-1</a></td><td>Grove</td><td>250</td></tr>
-<tr><td><a href="grove_gmk7450.html">GMK7450</a></td><td>Grove</td><td>450</td></tr>
-<tr><td><a href="kato_cr-250rv.html">CR-250RV</a></td><td>Kato</td><td>25</td></tr>
-<tr><td><a href="kato_sr-700l.html">SR-700L</a></td><td>Kato</td><td>70</td></tr>
-<tr><td><a href="kato_nk-800.html">NK-800</a></td><td>Kato</td><td>80</td></tr>
-<tr><td><a href="kato_nk-1200.html">NK-1200</a></td><td>Kato</td><td>120</td></tr>
-<tr><td><a href="liebherr_ltm-1030-2-1.html">LTM 1030-2.1</a></td><td>Liebherr</td><td>35</td></tr>
-<tr><td><a href="liebherr_ltm-1040-2-1.html">LTM 1040-2.1</a></td><td>Liebherr</td><td>40</td></tr>
-<tr><td><a href="liebherr_ltm-1050-3-1.html">LTM 1050-3.1</a></td><td>Liebherr</td><td>50</td></tr>
-<tr><td><a href="liebherr_ltm-1055-3-2.html">LTM 1055-3.2</a></td><td>Liebherr</td><td>55</td></tr>
-<tr><td><a href="liebherr_ltm-1060-3-1.html">LTM 1060-3.1</a></td><td>Liebherr</td><td>60</td></tr>
-<tr><td><a href="liebherr_ltm-1070-4-2.html">LTM 1070-4.2</a></td><td>Liebherr</td><td>70</td></tr>
-<tr><td><a href="liebherr_ltm-1090-4-2.html">LTM 1090-4.2</a></td><td>Liebherr</td><td>90</td></tr>
-<tr><td><a href="liebherr_ltm-1110-5-1.html">LTM 1110-5.1</a></td><td>Liebherr</td><td>110</td></tr>
-<tr><td><a href="liebherr_ltm-1150-5-3.html">LTM 1150-5.3</a></td><td>Liebherr</td><td>150</td></tr>
-<tr><td><a href="liebherr_ltm-1160-5-2.html">LTM 1160-5.2</a></td><td>Liebherr</td><td>160</td></tr>
-<tr><td><a href="liebherr_ltm-1300-6-3.html">LTM 1300-6.3</a></td><td>Liebherr</td><td>300</td></tr>
-<tr><td><a href="liebherr_ltm-1450-8-1.html">LTM 1450-8.1</a></td><td>Liebherr</td><td>450</td></tr>
-<tr><td><a href="liebherr_ltm-1650-8-1.html">LTM 1650-8.1</a></td><td>Liebherr</td><td>700</td></tr>
-<tr><td><a href="tadano_gr-200ex.html">GR-200EX</a></td><td>Tadano</td><td>20</td></tr>
-<tr><td><a href="tadano_gr-300ex.html">GR-300EX</a></td><td>Tadano</td><td>30</td></tr>
-<tr><td><a href="tadano_gr-500exs.html">GR-500EXS</a></td><td>Tadano</td><td>50</td></tr>
-<tr><td><a href="tadano_gr-700ex-4.html">GR-700EX-4</a></td><td>Tadano</td><td>70</td></tr>
-<tr><td><a href="tadano_gr-900ex-4.html">GR-900EX-4</a></td><td>Tadano</td><td>90</td></tr>
-<tr><td><a href="tadano_gr-1000ex-4.html">GR-1000EX-4</a></td><td>Tadano</td><td>100</td></tr>
-<tr><td><a href="tadano_atf100g-4.html">ATF100G-4</a></td><td>Tadano</td><td>100</td></tr>
-<tr><td><a href="tadano_atf-220-5-1.html">ATF-220-5.1</a></td><td>Tadano</td><td>220</td></tr>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                </svg>
+                <span>AU Compliance Index</span>
+            </a>
+            <div class="nav-links">
+                <a href="../about.html">About</a>
+                <a href="../privacy.html">Privacy</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a><span class="sep">/</span>
+            <span>Mobile Crane</span>
+        </div>
+
+        <div class="page-header">
+            <h1>Mobile Crane</h1>
+            <div class="count">37 models indexed with Australian compliance data</div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Manufacturer</th>
+                        <th>Key Specification</th>
+                    </tr>
+                </thead>
+                <tbody><tr><td><a href="franna_at15.html">AT15</a></td><td class="mfr">Franna</td><td>15 t</td></tr>
+<tr><td><a href="franna_at20.html">AT20</a></td><td class="mfr">Franna</td><td>20 t</td></tr>
+<tr><td><a href="franna_at22-2.html">AT22-2</a></td><td class="mfr">Franna</td><td>22 t</td></tr>
+<tr><td><a href="franna_at40.html">AT40</a></td><td class="mfr">Franna</td><td>40 t</td></tr>
+<tr><td><a href="franna_mac25.html">MAC25</a></td><td class="mfr">Franna</td><td>25 t</td></tr>
+<tr><td><a href="grove_gmk3050-3.html">GMK3050-3</a></td><td class="mfr">Grove</td><td>50 t</td></tr>
+<tr><td><a href="grove_gmk3060l-1.html">GMK3060L-1</a></td><td class="mfr">Grove</td><td>60 t</td></tr>
+<tr><td><a href="grove_gmk4080-1.html">GMK4080-1</a></td><td class="mfr">Grove</td><td>80 t</td></tr>
+<tr><td><a href="grove_gmk4090.html">GMK4090</a></td><td class="mfr">Grove</td><td>90 t</td></tr>
+<tr><td><a href="grove_gmk4100l-1.html">GMK4100L-1</a></td><td class="mfr">Grove</td><td>100 t</td></tr>
+<tr><td><a href="grove_gmk5250xl-1.html">GMK5250XL-1</a></td><td class="mfr">Grove</td><td>250 t</td></tr>
+<tr><td><a href="grove_gmk7450.html">GMK7450</a></td><td class="mfr">Grove</td><td>450 t</td></tr>
+<tr><td><a href="kato_cr-250rv.html">CR-250RV</a></td><td class="mfr">Kato</td><td>25 t</td></tr>
+<tr><td><a href="kato_nk-1200.html">NK-1200</a></td><td class="mfr">Kato</td><td>120 t</td></tr>
+<tr><td><a href="kato_nk-800.html">NK-800</a></td><td class="mfr">Kato</td><td>80 t</td></tr>
+<tr><td><a href="kato_sr-700l.html">SR-700L</a></td><td class="mfr">Kato</td><td>70 t</td></tr>
+<tr><td><a href="liebherr_ltm-1030-2-1.html">LTM 1030-2.1</a></td><td class="mfr">Liebherr</td><td>35 t</td></tr>
+<tr><td><a href="liebherr_ltm-1040-2-1.html">LTM 1040-2.1</a></td><td class="mfr">Liebherr</td><td>40 t</td></tr>
+<tr><td><a href="liebherr_ltm-1050-3-1.html">LTM 1050-3.1</a></td><td class="mfr">Liebherr</td><td>50 t</td></tr>
+<tr><td><a href="liebherr_ltm-1055-3-2.html">LTM 1055-3.2</a></td><td class="mfr">Liebherr</td><td>55 t</td></tr>
+<tr><td><a href="liebherr_ltm-1060-3-1.html">LTM 1060-3.1</a></td><td class="mfr">Liebherr</td><td>60 t</td></tr>
+<tr><td><a href="liebherr_ltm-1070-4-2.html">LTM 1070-4.2</a></td><td class="mfr">Liebherr</td><td>70 t</td></tr>
+<tr><td><a href="liebherr_ltm-1090-4-2.html">LTM 1090-4.2</a></td><td class="mfr">Liebherr</td><td>90 t</td></tr>
+<tr><td><a href="liebherr_ltm-1110-5-1.html">LTM 1110-5.1</a></td><td class="mfr">Liebherr</td><td>110 t</td></tr>
+<tr><td><a href="liebherr_ltm-1150-5-3.html">LTM 1150-5.3</a></td><td class="mfr">Liebherr</td><td>150 t</td></tr>
+<tr><td><a href="liebherr_ltm-1160-5-2.html">LTM 1160-5.2</a></td><td class="mfr">Liebherr</td><td>160 t</td></tr>
+<tr><td><a href="liebherr_ltm-1300-6-3.html">LTM 1300-6.3</a></td><td class="mfr">Liebherr</td><td>300 t</td></tr>
+<tr><td><a href="liebherr_ltm-1450-8-1.html">LTM 1450-8.1</a></td><td class="mfr">Liebherr</td><td>450 t</td></tr>
+<tr><td><a href="liebherr_ltm-1650-8-1.html">LTM 1650-8.1</a></td><td class="mfr">Liebherr</td><td>700 t</td></tr>
+<tr><td><a href="tadano_atf-220-5-1.html">ATF-220-5.1</a></td><td class="mfr">Tadano</td><td>220 t</td></tr>
+<tr><td><a href="tadano_atf100g-4.html">ATF100G-4</a></td><td class="mfr">Tadano</td><td>100 t</td></tr>
+<tr><td><a href="tadano_gr-1000ex-4.html">GR-1000EX-4</a></td><td class="mfr">Tadano</td><td>100 t</td></tr>
+<tr><td><a href="tadano_gr-200ex.html">GR-200EX</a></td><td class="mfr">Tadano</td><td>20 t</td></tr>
+<tr><td><a href="tadano_gr-300ex.html">GR-300EX</a></td><td class="mfr">Tadano</td><td>30 t</td></tr>
+<tr><td><a href="tadano_gr-500exs.html">GR-500EXS</a></td><td class="mfr">Tadano</td><td>50 t</td></tr>
+<tr><td><a href="tadano_gr-700ex-4.html">GR-700EX-4</a></td><td class="mfr">Tadano</td><td>70 t</td></tr>
+<tr><td><a href="tadano_gr-900ex-4.html">GR-900EX-4</a></td><td class="mfr">Tadano</td><td>90 t</td></tr>
 </tbody>
-    </table>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span>&copy; 2026 AU Compliance Index</span>
+            <div>
+                <a href="../about.html">About</a>
+                <a href="../privacy.html">Privacy</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
